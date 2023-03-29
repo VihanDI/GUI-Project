@@ -36,7 +36,12 @@ namespace GUI_Project
             Navigation.SelectedIndex = 0;
         }
 
-        private void Button_New(object sender, RoutedEventArgs e)
+        private void Button_Back_1(object sender, RoutedEventArgs e)
+        {
+            Navigation.SelectedIndex = 1;
+        }
+
+        private void Button_Products(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 2;
         }
