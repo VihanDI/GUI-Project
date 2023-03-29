@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_Project.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,17 @@ namespace GUI_Project
         private void Button_Products(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 2;
+        }
+
+        private void Add_To_Cart(object sender, RoutedEventArgs e)
+        {
+            CartProductWindow window = new CartProductWindow();
+            window.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
