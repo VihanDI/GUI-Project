@@ -340,6 +340,39 @@
             </Style.Triggers>
         </Style>
 
+        <Style x:Key="secondaryListButton" TargetType="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Thin"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="IBM Plex Sans Regular"/>
+            <Setter Property="Foreground" Value="#1d1d1b"/>
+            <Setter Property="Background" Value="#f6f6f6"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="1" BorderBrush="#f6f6f6" Padding="1" CornerRadius="15" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#c1c1c1"/>
+                    <Setter Property="Foreground" Value="#1d1d1b"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#999999"/>
+                    <Setter Property="Foreground" Value="#1d1d1b"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="messageBoxPrimaryButton" TargetType="Button">
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Width" Value="60"/>

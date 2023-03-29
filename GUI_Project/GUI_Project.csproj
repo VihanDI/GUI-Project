@@ -8,7 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\apples.jpg" />
     <None Remove="Images\bananas.jpg" />
+    <None Remove="Images\carrots.jpg" />
+    <None Remove="Images\milk.jpg" />
+    <None Remove="Images\oats.jpg" />
+    <None Remove="Images\pepsi.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +32,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\apples.jpg" />
     <Resource Include="Images\bananas.jpg" />
+    <Resource Include="Images\carrots.jpg" />
+    <Resource Include="Images\milk.jpg" />
+    <Resource Include="Images\oats.jpg" />
+    <Resource Include="Images\pepsi.jpg" />
   </ItemGroup>
 
 </Project>

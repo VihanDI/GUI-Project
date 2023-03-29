@@ -72,3 +72,5 @@ D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\bin
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\CartProductWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\CartProductWindow.baml
