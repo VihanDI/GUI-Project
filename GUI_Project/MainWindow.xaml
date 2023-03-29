@@ -69,7 +69,7 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource circleButton}" Click="Button_Back">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back_1">
                                         <Icons:PackIconMaterial Kind="ArrowLeft"/>
                                     </Button>
                                     <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Welcome"/>
@@ -78,38 +78,108 @@
                         </Grid>
                     </Border>
 
-                    <Border CornerRadius="0 15 15 0" Background="#f6f6f6" Grid.Row="1">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Button Style="{StaticResource mainMenuButton}" Click="Button_New">
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <Icons:PackIconMaterial Kind="Plus" Height="40" Width="40" HorizontalAlignment="Center" Margin="0 20"/>
-                                    <TextBlock Style="{StaticResource normalText}" Foreground="White" FontSize="20" Margin="20" Text="New Transaction"/>
+                    <Border Background="#f6f6f6" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="2.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0">
+                                <StackPanel Orientation="Vertical" Background="White">
+                                    <Button Style="{StaticResource menuButton}" Click="Button_Products">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="FruitGrapes" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Products"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="History" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="History"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="Logout" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Log Out"/>
+                                        </StackPanel>
+                                    </Button>
                                 </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource mainMenuButton}">
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <Icons:PackIconMaterial Kind="TshirtV" Height="40" Width="40" HorizontalAlignment="Center" Margin="0 20"/>
-                                    <TextBlock Style="{StaticResource normalText}" Foreground="White" FontSize="20" Margin="20" Text="Products"/>
+                            </Border>
+
+                            <Border  Height="563" Padding="0 5 0 1" VerticalAlignment="Bottom" Margin="20 20 20 20" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Search" Style="{StaticResource normalText}" VerticalAlignment="Center" Margin="10 0 10 0"/>
+                                        <TextBox Style="{StaticResource textBox}" Margin="0 0 0 10" Width="580" BorderBrush="White" HorizontalAlignment="Left"/>
+                                        <Button Style="{StaticResource symbolButton}">
+                                            <Icons:PackIconMaterial Kind="ShoppingSearch" Margin="10 0 0 10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                    <ListView ItemsSource="{Binding Products}" Height="525" BorderBrush="Transparent" FontFamily="IBM Plex Sans Regular" FontWeight="Thin" Name="List1">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" Margin="5" BorderBrush="Black" CornerRadius="5" Height="100">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\Images\bananas.jpg" Width="40" Height="40"/>
+                                                        <TextBlock Text="{Binding ProductName}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
+                                                        <TextBlock Text="{Binding Price}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
+                                                        <Button Style="{StaticResource listButton}" Margin="340 0 0 0">
+                                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                <TextBlock Foreground="White" FontSize="14" Text="Add to Cart" VerticalAlignment="Center" Margin="10 10"/>
+                                                                <Icons:PackIconMaterial Kind="Cart" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
                                 </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource mainMenuButton}">
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <Icons:PackIconMaterial Kind="History" Height="40" Width="40" HorizontalAlignment="Center" Margin="0 20"/>
-                                    <TextBlock Style="{StaticResource normalText}" Foreground="White" FontSize="20" Margin="20" Text="Transaction History"/>
+                            </Border>
+
+                            <Border Height="563" CornerRadius="10 10 0 0" Background="White" VerticalAlignment="Bottom" Margin="0 20 20 20" Grid.Column="2">
+                                <StackPanel Orientation="Vertical">
+                                    <Border Background="#165cea" CornerRadius="10 10 0 0">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Sub Total :" Foreground="White" Style="{StaticResource normalText}" HorizontalAlignment="Left" Margin="20"/>
+                                            <TextBlock/>
+                                        </StackPanel>
+                                        
+                                    </Border>
+                                    
+                                    <TextBlock Text="Items in the Cart :" Style="{StaticResource normalText}" HorizontalAlignment="Left" Margin="20"/>
+                                    <TextBlock/>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 320 0 0">
+                                        <Button Height="45" Width="100" Style="{StaticResource secondaryButton}" HorizontalAlignment="Right">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Icons:PackIconMaterial Kind="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Cancel" Margin="10 0 0 0"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                        <Button Height="45" Width="130" Style="{StaticResource primaryButton}" HorizontalAlignment="Right">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Icons:PackIconMaterial Kind="CurrencyUsd" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Check Out" Margin="10 0 0 0"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
                                 </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource mainMenuButton}">
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <Icons:PackIconMaterial Kind="Logout" Height="40" Width="40" HorizontalAlignment="Center" Margin="0 20"/>
-                                    <TextBlock Style="{StaticResource normalText}" Foreground="White" FontSize="20" Margin="20" Text="Log Out"/>
-                                </StackPanel>
-                            </Button>
-                        </StackPanel>
+                            </Border>
+                        </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
-            <TabItem Name="NewTransaction" Header="Tab3" Visibility="Collapsed">
+            <TabItem Name="Products" Header="Tab3" Visibility="Collapsed">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.25*"/>
@@ -126,10 +196,10 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource circleButton}" Click="Button_Back">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back_1">
                                         <Icons:PackIconMaterial Kind="ArrowLeft"/>
                                     </Button>
-                                    <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="New Transaction"/>
+                                    <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Product List"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
@@ -138,58 +208,64 @@
                     <Border CornerRadius="0 0 0 0" Background="#f6f6f6" Grid.Row="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
                                 <ColumnDefinition Width="2.5*"/>
-                                <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Border CornerRadius="5" Height="570" VerticalAlignment="Top" Margin="20 20 20 0" Grid.Column="0">
-                                <ScrollViewer>
-                                    <ListView ItemsSource="{Binding Products}" BorderBrush="Transparent" FontFamily="IBM Plex Sans Regular" FontWeight="Thin" Name="List1">
+                            <Border Grid.Column="0">
+                                <StackPanel Orientation="Vertical" Background="White">
+                                    <Button Style="{StaticResource menuButton}" Click="Button_Products" Width="210">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="Plus" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Add Product"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="210">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="ContentSaveEditOutline" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Edit Product"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="210">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="Delete" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Delete Product"/>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Height="563" Padding="0 5 0 1" VerticalAlignment="Bottom" Margin="20 20 20 20" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Search" Style="{StaticResource normalText}" VerticalAlignment="Center" Margin="10 0 10 0"/>
+                                        <TextBox Style="{StaticResource textBox}" Margin="0 0 0 10" Width="820" BorderBrush="White" HorizontalAlignment="Left"/>
+                                        <Button Style="{StaticResource symbolButton}">
+                                            <Icons:PackIconMaterial Kind="ShoppingSearch" Margin="10 0 0 10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        </Button>
+
+                                    </StackPanel>
+
+
+                                    <ListView ItemsSource="{Binding Products}" Height="525" BorderBrush="Transparent" FontFamily="IBM Plex Sans Regular" FontWeight="Thin" Name="List2">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <Border Padding="5" Margin="5" BorderBrush="Black" CornerRadius="5" Height="100">
                                                     <StackPanel Orientation="Horizontal">
+                                                        <Image Source="D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\Images\bananas.jpg" Width="40" Height="40"/>
                                                         <TextBlock Text="{Binding ProductName}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
                                                         <TextBlock Text="{Binding Price}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
-                                                        <Button Style="{StaticResource listButton}" Margin="450 0 0 0">
-                                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                                <TextBlock Foreground="White" FontSize="14" Text="Add to Cart" VerticalAlignment="Center" Margin="10 10"/>
-                                                                <Icons:PackIconMaterial Kind="Cart" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                            </StackPanel>
-                                                        </Button>
                                                     </StackPanel>
                                                 </Border>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
-                                </ScrollViewer>
-                            </Border>
-
-                            <Border CornerRadius="5" Height="570" Background="White" VerticalAlignment="Top" Margin="0 20 20 0" Grid.Column="1">
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Sub Total :" Style="{StaticResource normalText}" HorizontalAlignment="Left" Margin="20"/>
-                                    <TextBlock/>
-                                    <TextBlock Text="No of Items in the Cart :" Style="{StaticResource normalText}" HorizontalAlignment="Left" Margin="20"/>
-                                    <TextBlock/>
-
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 320 0 0">
-                                        <Button Height="50" Style="{StaticResource primaryButton}" HorizontalAlignment="Right">
-                                            <Icons:PackIconMaterial Kind="Cart" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Button>
-                                        <Button Content="Check Out" Height="50" Style="{StaticResource primaryButton}" HorizontalAlignment="Right"/>
-                                    </StackPanel>
-
-                                    
                                 </StackPanel>
                             </Border>
                         </Grid>
                     </Border>
-                </Grid>
-            </TabItem>
-
-            <TabItem Name="Products" Header="Tab3" Visibility="Collapsed">
-                <Grid>
-
                 </Grid>
             </TabItem>
 
