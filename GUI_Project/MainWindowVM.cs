@@ -15,6 +15,14 @@ namespace GUI_Project
         [ObservableProperty]
         public ObservableCollection<Product> products;
 
+        [ObservableProperty]
+        public ObservableCollection<Transaction> cart;
+
+        public Product cartProduct;
+
+        [ObservableProperty]
+        public int quantity;
+
         [RelayCommand]
         public void LoadProducts()
         {
@@ -25,9 +33,42 @@ namespace GUI_Project
             }
         }
 
+        [RelayCommand]
+        public void LoadCart()
+        {
+            using (var db = new DatabaseContext())
+            {
+                var list = db.ListofTransactions.ToList();
+                Cart = new ObservableCollection<Transaction>(list);
+            }
+        }
+
+        [RelayCommand]
+        public void CartProducts()
+        {
+            Transaction purchase = new Transaction();
+            purchase.Product = cartProduct.ProductName;
+            purchase.Quantity = quantity;
+
+            using (var db = new DatabaseContext())
+            {
+                db.ListofTransactions.Add(purchase);
+                db.SaveChanges();
+            }
+            LoadCart();
+        }
+
         public MainWindowVM()
         {
             LoadProducts();
+            LoadCart();
+        }
+
+        public MainWindowVM(Product product)
+        {
+            LoadProducts();
+            LoadCart();
+            cartProduct = product;
         }
     }
 }

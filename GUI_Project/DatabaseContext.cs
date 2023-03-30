@@ -15,5 +15,6 @@ namespace GUI_Project
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite($"Data Source={path}");
 
         public DbSet<Product> ListofProducts { get; set; }
+        public DbSet<Transaction> ListofTransactions { get; set; }
     }
 }

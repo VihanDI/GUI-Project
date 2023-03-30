@@ -37,6 +37,24 @@ namespace GUI_Project.Migrations
 
                     b.ToTable("ListofProducts");
                 });
+
+            modelBuilder.Entity("GUI_Project.Models.Transaction", b =>
+                {
+                    b.Property<int>("TransactionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Product")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("TransactionId");
+
+                    b.ToTable("ListofTransactions");
+                });
 #pragma warning restore 612, 618
         }
     }
