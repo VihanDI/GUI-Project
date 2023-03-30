@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,30 @@ namespace GUI_Project.Views
     /// </summary>
     public partial class CartProductWindow : Window
     {
+        Product product;
+
         public CartProductWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowVM();
+        }
+
+        public CartProductWindow(Product selectedProduct)
+        {
+            InitializeComponent();
+            DataContext = new MainWindowVM(selectedProduct);
+            product = selectedProduct;
         }
 
         private void Button_Click_Cancel(object sender, RoutedEventArgs e)
         {
             //sldr.Value = 1;
+            Close();
+        }
+
+        private void Button_Click_Ok(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(product.ProductName);
             Close();
         }
     }

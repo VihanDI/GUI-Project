@@ -1,4 +1,5 @@
-﻿using GUI_Project.Views;
+﻿using GUI_Project.Models;
+using GUI_Project.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,8 @@ namespace GUI_Project
 
         private void Add_To_Cart(object sender, RoutedEventArgs e)
         {
-            CartProductWindow window = new CartProductWindow();
+            Product selectedProduct = (List1.SelectedItem as Product);
+            CartProductWindow window = new CartProductWindow(selectedProduct);
             window.ShowDialog();
         }
 
