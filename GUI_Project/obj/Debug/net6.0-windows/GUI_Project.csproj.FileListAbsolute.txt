@@ -74,3 +74,15 @@ D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\bin
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\CartProductWindow.g.cs
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\CartProductWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\NotSelectedErrorWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\NotSelectedErrorWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\AddProductWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\EditProductWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\EmptyErrorMessageBox.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\SavedMessageBoxWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\AddProductWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\EditProductWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\EmptyErrorMessageBox.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\SavedMessageBoxWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteMessageBox.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteMessageBox.baml

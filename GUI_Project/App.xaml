@@ -28,12 +28,12 @@
             <Setter Property="FontWeight" Value="Thin"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Width" Value="20"/>
+            <Setter Property="Width" Value="100"/>
             <Setter Property="LineHeight" Value="28"/>
             <Setter Property="Height" Value="25"/>
             <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="Padding" Value="2"/>
-            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="Foreground" Value="#1d1d1b"/>
             <Setter Property="FontFamily" Value="IBM Plex Sans Regular"/>
         </Style>
@@ -222,7 +222,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border BorderThickness="1" BorderBrush="White" Padding="2" CornerRadius="10" Background="{TemplateBinding Background}">
+                        <Border BorderThickness="1" BorderBrush="White" Padding="2" CornerRadius="20" Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center">
 
                             </ContentPresenter>
@@ -254,7 +254,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border BorderThickness="1" BorderBrush="#999999" Padding="2" CornerRadius="10" Background="{TemplateBinding Background}">
+                        <Border BorderThickness="1" BorderBrush="#999999" Padding="2" CornerRadius="20" Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center">
 
                             </ContentPresenter>

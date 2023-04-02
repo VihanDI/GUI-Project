@@ -51,13 +51,55 @@ namespace GUI_Project
         private void Add_To_Cart(object sender, RoutedEventArgs e)
         {
             Product selectedProduct = (List1.SelectedItem as Product);
-            CartProductWindow window = new CartProductWindow(selectedProduct);
+
+            if(selectedProduct == null)
+            {
+                NotSelectedErrorWindow window = new NotSelectedErrorWindow();
+                window.ShowDialog();
+            }
+            else
+            {
+                CartProductWindow window = new CartProductWindow(selectedProduct);
+                window.ShowDialog();
+            }
+        }
+
+        private void Button_Add_Products(object sender, RoutedEventArgs e)
+        {
+            AddProductWindow window = new AddProductWindow();
             window.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Edit(object sender, RoutedEventArgs e)
         {
-            
+            Product selectedProduct = (List3.SelectedItem as Product);
+
+            if (selectedProduct == null)
+            {
+                var window = new NotSelectedErrorWindow();
+                window.ShowDialog();
+            }
+            else
+            {
+                var window = new EditProductWindow(selectedProduct.ProductID, selectedProduct.ProductName, selectedProduct.Image, selectedProduct.Price);
+                window.ShowDialog();
+            }
+        }
+
+        private void Button_Delete(object sender, RoutedEventArgs e)
+        {
+            Product selectedProduct = (List3.SelectedItem as Product);
+
+            if (selectedProduct == null)
+            {
+                var window = new NotSelectedErrorWindow();
+                window.ShowDialog();
+            }
+            else
+            {
+                var window = new ConfirmDeleteMessageBox(selectedProduct);
+                window.ShowDialog();
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace GUI_Project
         public Product cartProduct;
 
         [ObservableProperty]
-        public int quantity;
+        public int quantity = 1;
 
         [RelayCommand]
         public void LoadProducts()
@@ -53,6 +53,18 @@ namespace GUI_Project
             using (var db = new DatabaseContext())
             {
                 db.ListofTransactions.Add(purchase);
+                db.SaveChanges();
+            }
+            LoadCart();
+        }
+
+        [RelayCommand]
+        public void ClearList()
+        {
+
+            using (var db = new DatabaseContext())
+            {
+                db.ListofTransactions.RemoveRange(Cart);
                 db.SaveChanges();
             }
             LoadCart();
