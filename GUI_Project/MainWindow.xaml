@@ -70,7 +70,7 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource circleButton}" Click="Button_Back">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back" Command="{Binding LoadProductsCommand}">
                                         <Icons:PackIconMaterial Kind="ArrowLeft"/>
                                     </Button>
                                     <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Welcome"/>
@@ -89,7 +89,7 @@
 
                             <Border Grid.Column="0">
                                 <StackPanel Orientation="Vertical" Background="White">
-                                    <Button Style="{StaticResource menuButton}" Click="Button_Products" Width="200">
+                                    <Button Style="{StaticResource menuButton}" Click="Button_Products" Command="{Binding LoadProductsCommand}" Width="200">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="FruitGrapes" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <TextBlock Text="Products"/>
@@ -123,8 +123,9 @@
                                 <StackPanel Orientation="Vertical">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Search" Style="{StaticResource normalText}" VerticalAlignment="Center" Margin="10 0 10 0"/>
-                                        <TextBox Style="{StaticResource textBox}" Margin="0 0 0 10" Width="440" BorderBrush="White" HorizontalAlignment="Left"/>
-                                        <Button Style="{StaticResource symbolButton}">
+                                        <TextBox Name="sbox1" Style="{StaticResource textBox}" Text="{Binding SearchWord1,UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 10" Width="440" BorderBrush="White" HorizontalAlignment="Left"/>
+
+                                        <Button Style="{StaticResource symbolButton}" Command="{Binding SearchProducts1Command}">
                                             <Icons:PackIconMaterial Kind="ShoppingSearch" Margin="10 0 0 10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                         </Button>
 
@@ -217,7 +218,7 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource circleButton}" Click="Button_Back_1">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back_1" Command="{Binding LoadProductsCommand}">
                                         <Icons:PackIconMaterial Kind="ArrowLeft"/>
                                     </Button>
                                     <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Product List"/>
@@ -269,8 +270,8 @@
                                 <StackPanel Orientation="Vertical">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Search" Style="{StaticResource normalText}" VerticalAlignment="Center" Margin="10 0 10 0"/>
-                                        <TextBox Style="{StaticResource textBox}" Margin="0 0 0 10" Width="820" BorderBrush="White" HorizontalAlignment="Left"/>
-                                        <Button Style="{StaticResource symbolButton}">
+                                        <TextBox Name="sbox2" Style="{StaticResource textBox}" Text="{Binding SearchWord2, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 10" Width="820" BorderBrush="White" HorizontalAlignment="Left"/>
+                                        <Button Style="{StaticResource symbolButton}" Command="{Binding SearchProducts2Command}">
                                             <Icons:PackIconMaterial Kind="ShoppingSearch" Margin="10 0 0 10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                         </Button>
 
