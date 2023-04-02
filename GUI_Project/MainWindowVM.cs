@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Documents;
 
 namespace GUI_Project
 {
@@ -23,6 +25,12 @@ namespace GUI_Project
         [ObservableProperty]
         public int quantity = 1;
 
+        [ObservableProperty]
+        public string searchWord1 = "";
+
+        [ObservableProperty]
+        public string searchWord2 = "";
+
         [RelayCommand]
         public void LoadProducts()
         {
@@ -31,6 +39,72 @@ namespace GUI_Project
                 var list = db.ListofProducts.ToList();
                 Products = new ObservableCollection<Product>(list);
             }
+        }
+
+        [RelayCommand]
+        public void SearchProducts1()
+        {
+            if (searchWord1 == "")
+            {
+                LoadProducts();
+            }
+            else
+            {
+                LoadProducts();
+
+                int wordlength = searchWord1.Length;
+
+                var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord1.ToLower()).ToList();
+
+                Products = new ObservableCollection<Product>(sortedProducts);
+            }
+
+            /*
+            using (var db = new DatabaseContext())
+            {
+                var products = db.ListofProducts;
+                foreach (var p in products)
+                {
+                    if (searchWord == p.ProductName.Substring(0, wordlength))
+                    {
+                        
+                    }
+                }
+            }
+            */
+        }
+
+        [RelayCommand]
+        public void SearchProducts2()
+        {
+            if (searchWord2 == "")
+            {
+                LoadProducts();
+            }
+            else
+            {
+                LoadProducts();
+
+                int wordlength = searchWord2.Length;
+
+                var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord2.ToLower()).ToList();
+
+                Products = new ObservableCollection<Product>(sortedProducts);
+            }
+
+            /*
+            using (var db = new DatabaseContext())
+            {
+                var products = db.ListofProducts;
+                foreach (var p in products)
+                {
+                    if (searchWord == p.ProductName.Substring(0, wordlength))
+                    {
+                        
+                    }
+                }
+            }
+            */
         }
 
         [RelayCommand]

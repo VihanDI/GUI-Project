@@ -31,21 +31,29 @@ namespace GUI_Project
         private void Button_Sign_In(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 1;
+            sbox1.Text = "";
+            sbox2.Text = "";
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 0;
+            sbox1.Text = "";
+            sbox2.Text = "";
         }
 
         private void Button_Back_1(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 1;
+            sbox1.Text = "";
+            sbox2.Text = "";
         }
 
         private void Button_Products(object sender, RoutedEventArgs e)
         {
             Navigation.SelectedIndex = 2;
+            sbox1.Text = "";
+            sbox2.Text = "";
         }
 
         private void Add_To_Cart(object sender, RoutedEventArgs e)
