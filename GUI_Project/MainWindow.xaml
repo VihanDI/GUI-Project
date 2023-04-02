@@ -44,7 +44,7 @@
                             </Grid>
                         </Border>
 
-                        <Button Style="{StaticResource mainButton}" Margin="0 30 0 0" Content="Sign In" Click="Button_Sign_In"/>
+                        <Button Style="{StaticResource mainButton}" Margin="0 30 0 0" Content="Sign In" Click="Button_Sign_In" Command="{Binding ClearListCommand}"/>
 
                         <TextBlock Text="Don't have an account?" Margin="0 40 0 0" Style="{StaticResource normalText}"/>
 
@@ -70,7 +70,7 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource circleButton}" Click="Button_Back_1">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back">
                                         <Icons:PackIconMaterial Kind="ArrowLeft"/>
                                     </Button>
                                     <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Welcome"/>
@@ -103,7 +103,14 @@
                                         </StackPanel>
                                     </Button>
 
-                                    <Button Style="{StaticResource menuButton}" Width="200">
+                                    <Button Style="{StaticResource menuButton}" Width="200" Command="{Binding LoadProductsCommand}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="Refresh" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Refresh List"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="200" Click="Button_Back">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="Logout" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <TextBlock Text="Log Out"/>
@@ -131,7 +138,6 @@
                                                         <Image Source="{Binding ImageURL}" Width="40" Height="40"/>
                                                         <TextBlock Text="{Binding ProductName}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
                                                         <TextBlock Text="{Binding Price}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
-
                                                     </StackPanel>
                                                 </Border>
                                             </DataTemplate>
@@ -173,14 +179,14 @@
                                     </ListView>
 
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
-                                        <Button Height="45" Width="100" Style="{StaticResource secondaryButton}" HorizontalAlignment="Right">
+                                        <Button Height="45" Width="100" Style="{StaticResource secondaryButton}" HorizontalAlignment="Right" Command="{Binding ClearListCommand}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Icons:PackIconMaterial Kind="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 <TextBlock Text="Cancel" Margin="10 0 0 0"/>
                                             </StackPanel>
                                         </Button>
 
-                                        <Button Height="45" Width="130" Style="{StaticResource primaryButton}" HorizontalAlignment="Right">
+                                        <Button Height="45" Width="130" Style="{StaticResource primaryButton}" HorizontalAlignment="Right" Command="{Binding ClearListCommand}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Icons:PackIconMaterial Kind="CurrencyUsd" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 <TextBlock Text="Check Out" Margin="10 0 0 0"/>
@@ -229,24 +235,31 @@
 
                             <Border Grid.Column="0">
                                 <StackPanel Orientation="Vertical" Background="White">
-                                    <Button Style="{StaticResource menuButton}" Click="Button_Products" Width="200">
+                                    <Button Style="{StaticResource menuButton}" Click="Button_Add_Products" Width="200">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="Plus" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <TextBlock Text="Add Product"/>
                                         </StackPanel>
                                     </Button>
 
-                                    <Button Style="{StaticResource menuButton}" Width="200">
+                                    <Button Style="{StaticResource menuButton}" Width="200" Click="Button_Edit">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="ContentSaveEditOutline" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <TextBlock Text="Edit Product"/>
                                         </StackPanel>
                                     </Button>
 
-                                    <Button Style="{StaticResource menuButton}" Width="200">
+                                    <Button Style="{StaticResource menuButton}" Width="200" Click="Button_Delete">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="Delete" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <TextBlock Text="Delete Product"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="200" Command="{Binding LoadProductsCommand}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icons:PackIconMaterial Kind="Refresh" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Refresh List"/>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>

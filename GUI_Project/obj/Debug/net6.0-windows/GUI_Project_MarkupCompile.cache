@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\App.xaml
-2-2021934701
+81086322250
 
-131719739647
+211395849299
 215-858521482
-MainWindow.xaml;Views\CartProductWindow.xaml;
+MainWindow.xaml;Views\AddProductWindow.xaml;Views\CartProductWindow.xaml;Views\ConfirmDeleteMessageBox.xaml;Views\EditProductWindow.xaml;Views\EmptyErrorMessageBox.xaml;Views\NotSelectedErrorWindow.xaml;Views\SavedMessageBoxWindow.xaml;
 
 False
 
