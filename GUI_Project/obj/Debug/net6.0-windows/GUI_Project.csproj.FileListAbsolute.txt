@@ -86,3 +86,7 @@ D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\SavedMessageBoxWindow.baml
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteMessageBox.g.cs
 D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteMessageBox.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\AdminControlWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\AdminControlWindow.baml
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteUserWindow.g.cs
+D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\obj\Debug\net6.0-windows\Views\ConfirmDeleteUserWindow.baml

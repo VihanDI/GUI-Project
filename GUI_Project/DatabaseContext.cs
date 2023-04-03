@@ -16,5 +16,6 @@ namespace GUI_Project
 
         public DbSet<Product> ListofProducts { get; set; }
         public DbSet<Transaction> ListofTransactions { get; set; }
+        public DbSet<User> ListofUsers { get; set; }
     }
 }

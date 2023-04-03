@@ -7,7 +7,7 @@
         xmlns:dir="clr-namespace:GUI_Project.View_Models"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="EditProductWindow" Height="350" Width="600"
+        Title="EditProductWindow" Height="370" Width="600"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize">

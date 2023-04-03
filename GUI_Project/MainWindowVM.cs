@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GUI_Project.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,6 +31,12 @@ namespace GUI_Project
 
         [ObservableProperty]
         public string searchWord2 = "";
+
+        //[ObservableProperty]
+        //public string username;
+
+        //[ObservableProperty]
+        //public string password;
 
         [RelayCommand]
         public void LoadProducts()

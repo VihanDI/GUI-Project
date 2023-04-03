@@ -55,6 +55,29 @@ namespace GUI_Project.Migrations
 
                     b.ToTable("ListofTransactions");
                 });
+
+            modelBuilder.Entity("GUI_Project.Models.User", b =>
+                {
+                    b.Property<int>("UserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserID");
+
+                    b.ToTable("ListofUsers");
+                });
 #pragma warning restore 612, 618
         }
     }

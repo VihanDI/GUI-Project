@@ -28,7 +28,7 @@ namespace GUI_Project.Views
 
         private void Button_Enter(object sender, RoutedEventArgs e)
         {
-            Close();
+            //Close();
         }
 
         private void Button_Cancel(object sender, RoutedEventArgs e)

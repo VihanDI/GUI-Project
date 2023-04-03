@@ -28,7 +28,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Icons:PackIconMaterial Kind="Account" Foreground="#999999" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
-                                <TextBox Style="{StaticResource dataEntry}" Grid.Column="1"/>
+                                <TextBox Name="usernameBox" Style="{StaticResource dataEntry}" Grid.Column="1" Width="360"/>
                             </Grid>
                         </Border>
 
@@ -40,15 +40,13 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Icons:PackIconMaterial Kind="Lock" Foreground="#999999" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
-                                <PasswordBox Style="{StaticResource passEntry}" Grid.Column="1"/>
+                                <PasswordBox Name="passBox" Style="{StaticResource passEntry}" Grid.Column="1" Width="360"/>
                             </Grid>
                         </Border>
 
-                        <Button Style="{StaticResource mainButton}" Margin="0 30 0 0" Content="Sign In" Click="Button_Sign_In" Command="{Binding ClearListCommand}"/>
+                        <TextBlock Name="validate" Visibility="Hidden" Text="Incorrect Username or Password" Foreground="Red" Style="{StaticResource normalText}" Margin="0 10 0 0"/>
 
-                        <TextBlock Text="Don't have an account?" Margin="0 40 0 0" Style="{StaticResource normalText}"/>
-
-                        <Button Style="{StaticResource mainButton}" Content="Sign Up"/>
+                        <Button Style="{StaticResource mainButton}" Margin="0 30 0 0" Content="Log In" Click="Button_Sign_In" Command="{Binding ClearListCommand}"/>
                     </StackPanel>
                 </Grid>
             </TabItem>

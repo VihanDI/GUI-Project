@@ -10,10 +10,16 @@
     <Compile Update="Views\AddProductWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AdminControlWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CartProductWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ConfirmDeleteMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ConfirmDeleteUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EditProductWindow.xaml.cs">
@@ -36,10 +42,16 @@
     <Page Update="Views\AddProductWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\AdminControlWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CartProductWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ConfirmDeleteMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ConfirmDeleteUserWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EditProductWindow.xaml">
