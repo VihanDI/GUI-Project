@@ -34,8 +34,6 @@ namespace GUI_Project.Views
 
         private void Button_Cancel(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
             Close();
         }
 

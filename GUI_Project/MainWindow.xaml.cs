@@ -30,9 +30,54 @@ namespace GUI_Project
 
         private void Button_Sign_In(object sender, RoutedEventArgs e)
         {
-            Navigation.SelectedIndex = 1;
-            sbox1.Text = "";
-            sbox2.Text = "";
+            bool access = false;
+            User currentUser = null;
+
+            using (var db = new DatabaseContext())
+            {
+                var users = db.ListofUsers;
+                foreach (var u in users)
+                {
+                    if (usernameBox.Text == u.Username && passBox.Password == u.Password)
+                    {
+                        access = true;
+                        currentUser = u;
+                        break;
+                        
+                    }
+                    else
+                    {
+                        access = false;
+                    }
+                }
+            }
+
+            if (access)
+            {
+                validate.Visibility = Visibility.Hidden;
+                if (currentUser.Type == "Admin")
+                {
+                    Navigation.SelectedIndex = 1;
+                    sbox1.Text = "";
+                    sbox2.Text = "";
+
+                    var adminWindow = new AdminControlWindow();
+                    adminWindow.ShowDialog();
+                }
+                else
+                {
+                    Navigation.SelectedIndex = 1;
+                    sbox1.Text = "";
+                    sbox2.Text = "";
+                }
+            }
+            else
+            {
+                usernameBox.Text = "";
+                passBox.Clear();
+                validate.Visibility = Visibility.Visible;
+            }
+
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)
@@ -40,6 +85,9 @@ namespace GUI_Project
             Navigation.SelectedIndex = 0;
             sbox1.Text = "";
             sbox2.Text = "";
+
+            usernameBox.Text = "";
+            passBox.Clear();
         }
 
         private void Button_Back_1(object sender, RoutedEventArgs e)

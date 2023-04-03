@@ -1,0 +1,155 @@
+﻿<Window x:Class="GUI_Project.Views.AdminControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Project.Views"
+        xmlns:dir="clr-namespace:GUI_Project.View_Models"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="AddProductWindow" Height="590" Width="830"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <dir:AdminControlWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <TabControl Name="Navigation" HorizontalAlignment="Stretch" BorderBrush="Transparent">
+            <TabItem Name="AdminPanel" Header="Tab1" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.35*"/>
+                        <RowDefinition Height="1.5*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border CornerRadius="15 0 0 15" Grid.Row="0">
+                        <Border.Background>
+                            <SolidColorBrush Color="#ffffff">
+
+                            </SolidColorBrush>
+                        </Border.Background>
+
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="40 25" Text="Admin Control Panel"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="0" Background="#f6f6f6" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0">
+                                <StackPanel Orientation="Vertical" Background="White">
+                                    <Button Style="{StaticResource menuButton}" Width="210" Click="Button_Add_User">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icon:PackIconMaterial Kind="Plus" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Add User"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="210" Click="Button_Delete">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icon:PackIconMaterial Kind="Delete" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Delete User"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="210" Command="{Binding LoadUsersCommand}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icon:PackIconMaterial Kind="Refresh" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Refresh List"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Style="{StaticResource menuButton}" Width="210" Click="Button_Close">
+                                        <StackPanel Orientation="Vertical">
+                                            <Icon:PackIconMaterial Kind="Close" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="Close Panel"/>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Padding="0 5 0 1" VerticalAlignment="Top" Margin="20 20 20 20" Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <ListView ItemsSource="{Binding Users}" Height="400" BorderBrush="Transparent" FontFamily="IBM Plex Sans Regular" FontWeight="Thin" Name="List1">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Padding="5" Margin="5" BorderBrush="Black" CornerRadius="5" Height="100">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="{Binding Username}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
+                                                        <TextBlock Text="{Binding Type}" VerticalAlignment="Center" Margin="4" Padding="5" FontSize="16"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="AddUser" Header="Tab1" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.35*"/>
+                        <RowDefinition Height="1.5*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border CornerRadius="15 0 0 15" Grid.Row="0">
+                        <Border.Background>
+                            <SolidColorBrush Color="#ffffff">
+
+                            </SolidColorBrush>
+                        </Border.Background>
+
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource circleButton}" Click="Button_Back">
+                                        <Icon:PackIconMaterial Kind="ArrowLeft"/>
+                                    </Button>
+                                    <TextBlock Style="{StaticResource titleText}" TextAlignment="Left" Margin="0 15" Text="Enter user details"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border CornerRadius="0 15 15 0" Background="#f6f6f6" Grid.Row="1">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource dataEntryText}" Text="Username"/>
+                                <TextBox Name="usernameBox" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textBox}" Width="300"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource dataEntryText}" Text="Password"/>
+                                <TextBox Name="passwordBox" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textBox}" Width="300"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource dataEntryText}" Width="120" Text="Admin Account ?"/>
+                                <CheckBox Name="AdminCheckBox" IsChecked="{Binding Type}" VerticalAlignment="Center" Margin="15 0 0 0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 160 30 0">
+                                <Button Style="{StaticResource secondaryButton}" Height="40" Content="Cancel" Click="Button_Cancel"/>
+                                <Button Style="{StaticResource primaryButton}" Height="40" Content="Enter" Click="Button_Enter" Command="{Binding InsertUserCommand}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
