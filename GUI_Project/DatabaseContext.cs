@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GUI_Project.Models;
+using System.IO;
 
 namespace GUI_Project
 {
     public class DatabaseContext : DbContext
     {
-        private readonly string path = @"D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\product.db";
+        //private readonly string path = @"D:\Data\Documents\Academics\My Works\GitHub Projects\GUI-Project\GUI_Project\product.db";
+        public readonly string path = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "product.db");
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite($"Data Source={path}");
 
