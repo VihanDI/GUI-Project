@@ -16,7 +16,7 @@
             <TabItem Name="Login" Header="Tab1" Visibility="Collapsed">
                 <Grid>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource titleText}" Text="Point of Sale Sysytem"/>
+                        <TextBlock Style="{StaticResource titleText}" Text="Point of Sale System"/>
 
                         <TextBlock Text="Enter Username and Password to Sign In" Style="{StaticResource normalText}" Margin="0 10 0 0"/>
 
