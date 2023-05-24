@@ -150,9 +150,12 @@
                                     <Border Background="#165cea" CornerRadius="10 10 0 0">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="Sub Total :" Foreground="White" Style="{StaticResource normalText}" HorizontalAlignment="Left" Margin="20"/>
-                                            <TextBlock/>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                <TextBlock Text="Rs." FontWeight="Bold" FontSize="24" Foreground="White" Style="{StaticResource normalText}" HorizontalAlignment="Right" Margin="0 0 10 10"/>
+                                                <TextBlock Text="{Binding SubTotal}" FontWeight="Bold" FontSize="24" Foreground="White" Style="{StaticResource normalText}" HorizontalAlignment="Right" Margin="0 0 20 10"/>
+                                            </StackPanel>
+                                            
                                         </StackPanel>
-                                        
                                     </Border>
 
                                     <Button Style="{StaticResource primaryButton}" Margin="10 20 0 0" Width="200" Click="Add_To_Cart" Command="{Binding LoadCartCommand}">
@@ -177,7 +180,7 @@
                                         </ListView.ItemTemplate>
                                     </ListView>
 
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 0">
                                         <Button Height="45" Width="100" Style="{StaticResource secondaryButton}" HorizontalAlignment="Right" Command="{Binding ClearListCommand}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Icons:PackIconMaterial Kind="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -185,7 +188,7 @@
                                             </StackPanel>
                                         </Button>
 
-                                        <Button Height="45" Width="130" Style="{StaticResource primaryButton}" HorizontalAlignment="Right" Command="{Binding ClearListCommand}">
+                                        <Button Height="45" Width="130" Style="{StaticResource primaryButton}" HorizontalAlignment="Right" Command="{Binding CheckOutCommand}">
                                             <StackPanel Orientation="Horizontal">
                                                 <Icons:PackIconMaterial Kind="CurrencyUsd" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 <TextBlock Text="Check Out" Margin="10 0 0 0"/>
