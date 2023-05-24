@@ -11,6 +11,7 @@ namespace GUI_Project.Models
         public int TransactionId { get; set; }
         public string Product { get; set; }
         public int Quantity { get; set; }
+        public double UnitPrice { get; set; }
 
         /*
         public Transaction(string product, int quantity)

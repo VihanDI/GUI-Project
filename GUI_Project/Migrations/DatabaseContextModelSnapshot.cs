@@ -51,6 +51,9 @@ namespace GUI_Project.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
+                    b.Property<double>("UnitPrice")
+                        .HasColumnType("REAL");
+
                     b.HasKey("TransactionId");
 
                     b.ToTable("ListofTransactions");

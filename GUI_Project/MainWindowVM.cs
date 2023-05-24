@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 
 namespace GUI_Project
@@ -31,6 +32,26 @@ namespace GUI_Project
 
         [ObservableProperty]
         public string searchWord2 = "";
+
+        [ObservableProperty]
+        public double subTotal = 0;
+
+        public double UpdateSubTotal()
+        {
+            //SubTotal ++;
+            double total = 0;
+            
+            using (var db = new DatabaseContext())
+            {
+                var products = db.ListofTransactions;
+                foreach (var p in products)
+                {
+                    total = total + (p.UnitPrice * p.Quantity);
+                }
+            }
+
+            return total;
+        }
 
         //[ObservableProperty]
         //public string username;
@@ -122,6 +143,8 @@ namespace GUI_Project
                 var list = db.ListofTransactions.ToList();
                 Cart = new ObservableCollection<Transaction>(list);
             }
+
+            SubTotal = UpdateSubTotal();
         }
 
         [RelayCommand]
@@ -130,6 +153,7 @@ namespace GUI_Project
             Transaction purchase = new Transaction();
             purchase.Product = cartProduct.ProductName;
             purchase.Quantity = quantity;
+            purchase.UnitPrice = cartProduct.Price;
 
             using (var db = new DatabaseContext())
             {
@@ -137,11 +161,47 @@ namespace GUI_Project
                 db.SaveChanges();
             }
             LoadCart();
+            //SubTotal = UpdateSubTotal();
+
+            /*
+            SubTotal = 0;
+            using (var db = new DatabaseContext())
+            {
+                var products = db.ListofTransactions;
+                foreach (var p in products)
+                {
+                    SubTotal = SubTotal + (p.UnitPrice * p.Quantity);
+                }
+            }
+            */
         }
 
         [RelayCommand]
         public void ClearList()
         {
+            using (var db = new DatabaseContext())
+            {
+                db.ListofTransactions.RemoveRange(Cart);
+                db.SaveChanges();
+            }
+            LoadCart();
+
+            SubTotal = 0;
+        }
+
+        [RelayCommand]
+        public void CheckOut()
+        {
+            /*
+            using (var db = new DatabaseContext())
+            {
+                var products = db.ListofTransactions;
+                foreach (var p in products)
+                {
+                    SubTotal = SubTotal + (p.UnitPrice * p.Quantity);
+                }
+            }
+            */
 
             using (var db = new DatabaseContext())
             {
@@ -149,6 +209,7 @@ namespace GUI_Project
                 db.SaveChanges();
             }
             LoadCart();
+            
         }
 
         public MainWindowVM()
