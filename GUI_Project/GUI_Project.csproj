@@ -8,12 +8,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\apple juice.png" />
     <None Remove="Images\apples.jpg" />
     <None Remove="Images\bananas.jpg" />
+    <None Remove="Images\battery.jpg" />
+    <None Remove="Images\beans.jpg" />
+    <None Remove="Images\beet.jpg" />
+    <None Remove="Images\bread.png" />
     <None Remove="Images\carrots.jpg" />
+    <None Remove="Images\cheese.jpg" />
+    <None Remove="Images\chocolate.jpg" />
+    <None Remove="Images\coconut oil.jpg" />
+    <None Remove="Images\coffee.jpg" />
+    <None Remove="Images\coke.png" />
+    <None Remove="Images\mango.jpg" />
     <None Remove="Images\milk.jpg" />
     <None Remove="Images\oats.jpg" />
+    <None Remove="Images\orange juice.jpg" />
     <None Remove="Images\pepsi.jpg" />
+    <None Remove="Images\pineapple.jpg" />
+    <None Remove="Images\pumpkin.jpg" />
+    <None Remove="Images\strawberry jam.jpg" />
+    <None Remove="Images\sunflower oil.jpg" />
+    <None Remove="Images\tomato.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,12 +49,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\apple juice.png" />
     <Resource Include="Images\apples.jpg" />
     <Resource Include="Images\bananas.jpg" />
+    <Resource Include="Images\battery.jpg" />
+    <Resource Include="Images\beans.jpg" />
+    <Resource Include="Images\beet.jpg" />
+    <Resource Include="Images\bread.png" />
     <Resource Include="Images\carrots.jpg" />
+    <Resource Include="Images\cheese.jpg" />
+    <Resource Include="Images\chocolate.jpg" />
+    <Resource Include="Images\coconut oil.jpg" />
+    <Resource Include="Images\coffee.jpg" />
+    <Resource Include="Images\coke.png" />
+    <Resource Include="Images\mango.jpg" />
     <Resource Include="Images\milk.jpg" />
     <Resource Include="Images\oats.jpg" />
+    <Resource Include="Images\orange juice.jpg" />
     <Resource Include="Images\pepsi.jpg" />
+    <Resource Include="Images\pineapple.jpg" />
+    <Resource Include="Images\pumpkin.jpg" />
+    <Resource Include="Images\strawberry jam.jpg" />
+    <Resource Include="Images\sunflower oil.jpg" />
+    <Resource Include="Images\tomato.jpg" />
   </ItemGroup>
 
 </Project>

@@ -94,13 +94,6 @@
                                         </StackPanel>
                                     </Button>
 
-                                    <Button Style="{StaticResource menuButton}" Width="200">
-                                        <StackPanel Orientation="Vertical">
-                                            <Icons:PackIconMaterial Kind="History" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                            <TextBlock Text="History"/>
-                                        </StackPanel>
-                                    </Button>
-
                                     <Button Style="{StaticResource menuButton}" Width="200" Command="{Binding LoadProductsCommand}">
                                         <StackPanel Orientation="Vertical">
                                             <Icons:PackIconMaterial Kind="Refresh" Margin="10" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -295,12 +288,6 @@
                             </Border>
                         </Grid>
                     </Border>
-                </Grid>
-            </TabItem>
-
-            <TabItem Name="History" Header="Tab3" Visibility="Collapsed">
-                <Grid>
-
                 </Grid>
             </TabItem>
         </TabControl>
