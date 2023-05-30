@@ -82,9 +82,12 @@ namespace GUI_Project
 
                 int wordlength = searchWord1.Length;
 
-                var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord1.ToLower()).ToList();
+                //var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord1.ToLower()).ToList();
+                var sortedProducts = Products.Where(p => p.ProductName.Length >= wordlength).ToList();
+                var furtherSortedProducts = sortedProducts.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord1.ToLower()).ToList();
 
-                Products = new ObservableCollection<Product>(sortedProducts);
+                //Products = new ObservableCollection<Product>(sortedProducts);
+                Products = new ObservableCollection<Product>(furtherSortedProducts);
             }
 
             /*
@@ -115,9 +118,12 @@ namespace GUI_Project
 
                 int wordlength = searchWord2.Length;
 
-                var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord2.ToLower()).ToList();
+                //var sortedProducts = Products.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord2.ToLower()).ToList();
+                var sortedProducts = Products.Where(p => p.ProductName.Length >= wordlength).ToList();
+                var furtherSortedProducts = sortedProducts.Where(p => p.ProductName.Substring(0, wordlength).ToLower() == searchWord2.ToLower()).ToList();
 
-                Products = new ObservableCollection<Product>(sortedProducts);
+                //Products = new ObservableCollection<Product>(sortedProducts);
+                Products = new ObservableCollection<Product>(furtherSortedProducts);
             }
 
             /*
