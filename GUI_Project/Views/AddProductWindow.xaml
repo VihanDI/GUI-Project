@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GUI_Project.Views"
         xmlns:dir="clr-namespace:GUI_Project.View_Models"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Icon="/Icons/Icon.png"
         mc:Ignorable="d"
         Title="AddProductWindow" Height="370" Width="600"
         WindowStartupLocation="CenterScreen"

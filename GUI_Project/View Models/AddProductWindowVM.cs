@@ -56,5 +56,26 @@ namespace GUI_Project.View_Models
                 window.ShowDialog();
             }
         }
+
+        //test function to add products to the database
+        public void addProduct(Product product)
+        {
+            if (product.ProductName == "" || product.Price <= 0 || product.Image == "")
+            {
+                var window = new EmptyErrorMessageBox();
+                window.ShowDialog();
+            }
+            else
+            {
+                using (var db = new DatabaseContext())
+                {
+                    db.ListofProducts.Add(product);
+                    db.SaveChanges();
+                }
+
+                var window = new SavedMessageBoxWindow();
+                window.ShowDialog();
+            }
+        }
     }
 }

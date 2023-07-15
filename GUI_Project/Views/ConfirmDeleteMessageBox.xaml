@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_Project.Views"
+        Icon="/Icons/Icon.png"
         mc:Ignorable="d"
         Title="Confirmation" Height="140" Width="280"
         WindowStartupLocation="CenterScreen"
