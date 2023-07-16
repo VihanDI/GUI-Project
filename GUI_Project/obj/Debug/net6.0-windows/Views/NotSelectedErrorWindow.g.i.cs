@@ -53,7 +53,7 @@ namespace GUI_Project.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GUI_Project;V1.0.0.0;component/views/notselectederrorwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GUI_Project;component/views/notselectederrorwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\NotSelectedErrorWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
